@@ -1,0 +1,117 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.clearfix:after { content:"."; clear: both; height: 0; overflow: hidden; visibility: hidden; display: block; }
+.clearfix { zoom: 1;}
+.layui-header{
+    background-color: #1E9FFF !important;
+    border-bottom: 0px !important;
+}
+.layui-nav{
+    background: none;
+}
+.layui-layout-left{
+    left: 0;
+    top: 4px;
+}
+.layui-layout-left a{
+    color: #fff;
+    font-size: 18px;
+}
+.layui-layout-right a{
+    color: #fff!important;
+}
+.layui-layout-right a img{
+    margin-right: 6px;
+}
+.layui-layout-right ul li{
+    display: inline-block;
+}
+.layui-layout-left a img{
+    vertical-align: middle;
+    height: 45px;
+    margin-bottom: 4px;
+    margin-right: 10px;
+}
+.layui-table-cell{
+    text-align: center;
+}
+.layui-tab-title .layui-this:after{
+    border-width: 0;
+}
+.layui-tab-title .layui-this{
+    background: #E6E6E6;
+}
+.table-nav{
+    margin: 0;
+    position: relative;
+}
+.table-nav b{
+    background: #fff;
+    padding: 0 12px;
+    line-height: 40px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 99;
+}
+.table-nav ul{
+    flex: 1;
+    padding-left: 40px;
+}
+.layui-laypage .layui-laypage-curr .layui-laypage-em{
+    background-color: #1E9FFF!important;
+}
+/* 切换 */
+.branch-tab{
+    background: #fff;
+    padding: 0 10px;
+    border-bottom: 1px solid #D2D2D2;
+}
+.branch-tab ul li{
+    display: inline-block;
+    padding: 10px;
+    margin: 0 6px;
+}
+.branch-tab ul li.active{
+    border-bottom: 2px solid #1E9FFF;
+}
+.branch-tab ul li a{
+    display: block;
+}
+/*切换 end*/
+.layui-form-select dl dd.layui-this{
+    background: #1E9FFF;
+}
+.layui-btn-primary:hover{
+    border-color: #1E9FFF;
+}
+.layui-nav .layui-nav-child dd.layui-this a, .layui-nav-child dd.layui-this{
+    background: #1E9FFF;
+}
+.rightmenu{
+    background: #1E9FFF;
+    padding: 3px 0;
+}
+.rightmenu li{
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    padding: 0 12px;
+    cursor: pointer;
+}
+.rightmenu li:first-child{
+    border-bottom: 1px solid #fff;
+}
+.table-cz-btn a{
+    cursor: pointer;
+}
+.layui-form-radio>i:hover, .layui-form-radioed>i{
+    color: #1E9FFF;
+}
+.layui-form-checked[lay-skin=primary] i{
+    border-color: #1E9FFF!important;
+    background-color: #1E9FFF;
+}

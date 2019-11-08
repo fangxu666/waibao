@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>资源终审</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1492202_iboi8amatm.css">
+    <link rel="stylesheet" href="../css/layui.css"/>
+    <link rel="stylesheet" href="../css/common.css"/>
+    <style>
+        body{
+            overflow: hidden;
+        }
+        .table-content{
+            background: #fff;
+            padding: 10px;
+        }
+        .layui-form-item{
+            margin-bottom: 0px;
+        }
+        .dFlex{
+            display: flex;
+        }
+        .dFlex .flexOne{
+            flex: 1;
+        }
+        .dFlex .flexOne .layui-input-inline{
+            margin-bottom: 12px;
+        }
+        .search-div{
+            position: relative;
+        }
+        .search-btn{
+            text-align: center;
+            position: absolute;
+            width: 25%;
+            bottom: 0;
+            right: 0;
+        }
+        .table-cz-btn{
+            margin: 0 3px;
+        }
+        .iconarrow-double-up-class i,.iconarrow-double-down i{
+            font-size: 20px;
+            color: #999;
+            vertical-align: middle;
+            margin-right: 6px;
+        }
+        .iconarrow-double-down-class{
+            display: none;
+        }
+        .layui-table-view,.layui-table{
+            margin: 0;
+        }
+        .cz-btn{
+            text-align: left;
+            margin-top: 10px;
+            background: #e6e6e6;
+            padding: 6px 10px;
+        }
+        .cz-btn button.layui-btn{
+            height: 30px;
+            line-height: 30px;
+            padding: 0 14px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="layui-tab-item layui-show">
+    <div class="branch-tab">
+        <ul>
+            <li class="active"><a href="javascript:void(0)">待终审</a></li>
+            <li><a href="javascript:void(0)">已终审</a></li>
+        </ul>
+    </div>
+    <iframe id="iframe" src="zyfs/dfs.html" frameborder="0" style="width: 100%;"></iframe>
+</div>
+<script src="../layui.all.js" charset="utf-8"></script>
+<script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-1.4.4.min.js" type="text/javascript"></script>
+<script type="text/html" id="barDemo">
+    <a class="table-cz-btn" lay-event="select">
+        <img src="../images/info-hover.png" alt="" />
+    </a>
+    <a class="table-cz-btn" lay-event="select">
+        <img src="../images/yulan-hover.png" alt="" />
+    </a>
+</script>
+<script>
+    layui.use(['jquery', 'layer'], function(){
+        var $ = layui.jquery //重点处
+            ,form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,element = layui.element
+            ,table = layui.table  //表格，注意此处table必须是全局变量
+            ,laydate = layui.laydate;
+        FrameWH()
+        // 分配切换
+        $("body").on("click",'.branch-tab ul li',function () {
+            var index = $(this).index()
+            var arr = ['zyzs/dzs.html','zyzs/yzs.html']
+            $(this).addClass("active").siblings("li").removeClass("active")
+            $("#iframe").attr('src',arr[index])
+        })
+        $(window).resize(function () {
+            FrameWH();
+        })
+        function FrameWH() {
+            var h = $(window).height();
+            $("iframe").css("height",h+"px");
+        }
+    });
+
+</script>
+</body>
+</html>
