@@ -120,7 +120,6 @@
                 element.tabChange('demo', id); //根据传入的id传入到指定的tab项
             },
             tabDelete: function (id) {
-                debugger
                 element.tabDelete("demo", id);//删除
             }
             , tabDeleteAll: function (ids) {//删除所有
@@ -172,7 +171,7 @@
                 //判断右侧菜单的位置
                 l = ($(document).width() - e.clientX) < popupmenu.width() ? (e.clientX - popupmenu.width()) : e.clientX;
                 t = ($(document).height() - e.clientY) < popupmenu.height() ? (e.clientY - popupmenu.height()) : e.clientY;
-                popupmenu.css({ left: l, top: t + 20 }).show(); //进行绝对定位
+                popupmenu.css({ left: l, top: 40 }).show(); //进行绝对定位
                 //alert("右键菜单")
                 return false;
             });

@@ -67,9 +67,9 @@
 </head>
 <body>
 <div class="table-content">
+    <form class="layui-form layui-form-pane layui-row layui-col-space10" action="">
     <div class="search-div layui-row layui-col-space10">
         <div class="layui-col-md9 layui-col-space10">
-            <form class="layui-form layui-form-pane layui-row layui-col-space10" action="">
                 <div class="layui-col-md3">
                     <div class="layui-form-item">
                         <label class="layui-form-label">资源名称</label>
@@ -243,7 +243,6 @@
                         </div>
                     </div>
                 </div>
-            </form>
         </div>
         <div class="search-btn layui-col-md3">
             <a href="javascript:void(0);" class="iconarrow-double-up-class"><i class="iconfont iconarrow-double-up"></i></a>
@@ -252,6 +251,7 @@
             <button type="reset" class="layui-btn layui-btn-primary">重置</button>
         </div>
     </div>
+    </form>
     <div class="tableDiv">
         <div class="cz-btn">
             <button type="button" class="layui-btn layui-btn-normal">标引</button>
@@ -326,9 +326,9 @@
     }
     //页面高度适配
     function getHeight() {
-        $(".tableDiv .layui-table-view").height($(window).height()-96-$(".search-div").height());//表格高度
-        $(".tableDiv .layui-table-view .layui-table-box").height($(window).height()-136-$(".search-div").height());//表格高度
-        $(".tableDiv .layui-table-view .layui-table-body").height($(window).height()-170-$(".search-div").height());//表格高度
+        $(".tableDiv .layui-table-view").height($(window).height()-102-$(".search-div").height());//表格高度
+        $(".tableDiv .layui-table-view .layui-table-box").height($(window).height()-140-$(".search-div").height());//表格高度
+        $(".tableDiv .layui-table-view .layui-table-body").height($(window).height()-185-$(".search-div").height());//表格高度
     }
 </script>
 </body>
