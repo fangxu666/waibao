@@ -254,10 +254,10 @@
         </form>
         <div class="tableDiv">
             <div class="cz-btn">
-                <button type="button" class="layui-btn layui-btn-normal">转换</button>
-                <button type="button" class="layui-btn layui-btn-primary">查重</button>
+                <button type="button" class="layui-btn layui-btn-normal" id="zh-btn">转换</button>
+                <button type="button" class="layui-btn layui-btn-primary" id="cz-btn">查重</button>
             </div>
-            <table id="layui-table" lay-filter="tableBox" class="layui-table"></table>
+            <table id="layui-table" lay-filter="tableBox"  class="layui-table"></table>
         </div>
     </div>
 </div>
@@ -266,10 +266,10 @@
 <script src="../js/jquery-1.4.4.min.js" type="text/javascript"></script>
 <script type="text/html" id="barDemo">
     <a class="table-cz-btn" lay-event="select">
-        <img src="../images/info-hover.png" alt="" />
+        <img src="../images/info-hover.png" alt="" title="详情" />
     </a>
     <a class="table-cz-btn" lay-event="select">
-        <img src="../images/yulan-hover.png" alt="" />
+        <img src="../images/yulan-hover.png" alt="" title="预览" />
     </a>
 </script>
 <script>
@@ -284,6 +284,7 @@
         //日期选择
         laydate.render({
             elem: '#date1'
+            ,range:true
         });
         //表格参数
         var arr = [[
@@ -304,6 +305,43 @@
         var urls = '../tableJson.js';
         com.tableRender('#layui-table','tableId','full-53',limitArr,urls,arr);//加载表格,注意tableId是自定义的，在表格重载需要！！
         getHeight()
+
+        //复选方法监听    自定义数组
+        var ids = null;
+        var flag = true
+        table.on('checkbox(tableBox)', function(obj){
+            if (flag){
+                ids = $(".layui-laypage-limits").find("option:selected").val()
+                flag = false
+            }
+            if(obj.checked==true){
+                if(obj.type=='all'){
+                    ids = $(".layui-laypage-limits").find("option:selected").val()
+                    $("#zh-btn").text("批量转换")
+                }else{
+                    if (ids <= 0){
+                        $("#zh-btn").text("转换")
+                    } else{
+                        $("#zh-btn").text("批量转换")
+                    }
+                    ids++
+                }
+            }else{
+                if(obj.type=='all'){
+                    ids = 0
+                    $("#zh-btn").text("转换")
+                }else{
+                    ids--
+                    console.log(ids)
+                    if (ids >= 2){
+                        $("#zh-btn").text("批量转换")
+                    } else {
+                        $("#zh-btn").text("转换")
+                    }
+
+                }
+            }
+        });
         //伸缩箭头
         $("body").on("click",'.iconarrow-double-up-class',function () {
             $(".form-hide").hide()

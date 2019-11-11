@@ -115,3 +115,22 @@
     border-color: #1E9FFF!important;
     background-color: #1E9FFF;
 }
+.layui-table-page{
+    text-align: right;
+}
+.flexOne .layui-input-inline:nth-child(6),.flexOne .layui-input-inline:nth-child(7){
+    width: 390px;
+}
+.table-cz-btn{
+    display: inline-block;
+    cursor: pointer;
+}
+.layui-form-pane .layui-form-label{
+    width: 90px;
+}
+.layui-form-pane .layui-input-block{
+    margin-left: 90px;
+}
+.layui-laydate td.layui-this{
+    background-color: #1E9FFF!important;
+}
