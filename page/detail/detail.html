@@ -75,6 +75,63 @@
         .audit-information .audit-list{
             /*flex: 1;*/
             text-align: center;
+            position: relative;
+        }
+        .audit-list-hover{
+            position: absolute;
+            border: 1px solid #e0e0e0;
+            width: 280px;
+            right: -255px;
+            bottom: 68px;
+            background: #fff;
+            display: none;
+        }
+        .audit-information .audit-list:last-child .audit-list-hover{
+            right: auto;
+            left: -255px;
+        }
+        .audit-list-hover ul li{
+            position: relative;
+            padding-bottom: 8px;
+            text-align: left;
+        }
+        .audit-list-hover ul li:before {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 0;
+            z-index: 0;
+            width: 1px;
+            height: 100%;
+            background-color: #1e9fff;
+            display: block;
+        }
+        .audit-list-hover-title{
+            border-bottom: 1px solid #e0e0e0;
+            background: #f8f8f8;
+            width: 100%;
+            height: 36px;
+            line-height: 36px;
+            color: #5d5d5d;
+            font-size: 16px;
+            text-align: left;
+            text-indent: 15px;
+        }
+        .audit-information .audit-list-hover ul li i{
+            width: 12px;
+            height: 12px;
+            z-index: 99;
+            position: relative;
+            margin-bottom: 5px;
+        }
+        .audit-list-hover-content{
+            padding: 20px;
+            line-height: 22px;
+            font-size: 14px;
+            color: #666;
+        }
+        .msg-line{
+            padding-left: 25px;
         }
         .audit-information .audit-list:last-child{
             text-align: right;
@@ -94,6 +151,7 @@
             background: #D1D1D1;
             font-style: normal;
             margin-bottom: 16px;
+            position: relative;
         }
         .audit-information .audit-list.active i{
             background: #1E9FFF;
@@ -301,21 +359,130 @@
                 <div class="audit-information">
                     <div class="border"></div>
                     <div class="audit-list active">
-                        <i>初</i>
+                        <i>
+                            初
+                            <div class="audit-list-hover">
+                                <div class="audit-list-hover-title">
+                                    信息
+                                </div>
+                                <div class="audit-list-hover-content">
+                                    <ul>
+                                        <li>
+                                            <i class="blue-k"></i>
+                                            <div class="msg-line">
+                                                <p>审核人：张三</p>
+                                                <p>审核时间：2019-03-27</p>
+                                                <p>审核意见：材料不齐全</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <i class="blue-k"></i>
+                                            <div class="msg-line">
+                                                <p>审核人：张三</p>
+                                                <p>审核时间：2019-03-27</p>
+                                                <p>审核意见：材料不齐全</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </i>
                         <p>初审通过</p>
                         <p>张三</p>
                         <b>2019-03-26 15:30:10</b>
+
                     </div>
                     <div class="audit-list">
-                        <i>分</i>
+                        <i>
+                            分
+                            <div class="audit-list-hover">
+                                <div class="audit-list-hover-title">
+                                    信息
+                                </div>
+                                <div class="audit-list-hover-content">
+                                    <ul>
+                                        <li>
+                                            <i class="blue-k"></i>
+                                            <div class="msg-line">
+                                                <p>审核人：张三</p>
+                                                <p>审核时间：2019-03-27</p>
+                                                <p>审核意见：材料不齐全</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <i class="blue-k"></i>
+                                            <div class="msg-line">
+                                                <p>审核人：张三</p>
+                                                <p>审核时间：2019-03-27</p>
+                                                <p>审核意见：材料不齐全</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </i>
                         <p>待分配</p>
                     </div>
                     <div class="audit-list">
-                        <i>复</i>
+                        <i>
+                            复
+                            <div class="audit-list-hover">
+                                <div class="audit-list-hover-title">
+                                    信息
+                                </div>
+                                <div class="audit-list-hover-content">
+                                    <ul>
+                                        <li>
+                                            <i class="blue-k"></i>
+                                            <div class="msg-line">
+                                                <p>审核人：张三</p>
+                                                <p>审核时间：2019-03-27</p>
+                                                <p>审核意见：材料不齐全</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <i class="blue-k"></i>
+                                            <div class="msg-line">
+                                                <p>审核人：张三</p>
+                                                <p>审核时间：2019-03-27</p>
+                                                <p>审核意见：材料不齐全</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </i>
                         <p>待复审</p>
                     </div>
                     <div class="audit-list">
-                        <i>终</i>
+                        <i>
+                            终
+                            <div class="audit-list-hover">
+                                <div class="audit-list-hover-title">
+                                    信息
+                                </div>
+                                <div class="audit-list-hover-content">
+                                    <ul>
+                                        <li>
+                                            <i class="blue-k"></i>
+                                            <div class="msg-line">
+                                                <p>审核人：张三</p>
+                                                <p>审核时间：2019-03-27</p>
+                                                <p>审核意见：材料不齐全</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <i class="blue-k"></i>
+                                            <div class="msg-line">
+                                                <p>审核人：张三</p>
+                                                <p>审核时间：2019-03-27</p>
+                                                <p>审核意见：材料不齐全</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </i>
                         <p>待终审</p>
                     </div>
                 </div>
@@ -335,7 +502,23 @@
             , element = layui.element
             , table = layui.table  //表格，注意此处table必须是全局变量
             , laydate = layui.laydate;
-
+        //鼠标的移入移出
+        var t = "";
+        var that = ''
+        $('.audit-information .audit-list>i').hover(function() {
+            that = this
+            $(that).find(".audit-list-hover").stop().fadeIn();
+        }, function() {
+            t=setTimeout(function(){
+                $(that).find(".audit-list-hover").stop().fadeOut();
+            },100);
+        });
+        $(".audit-list-hover").hover(function() {
+            window.clearInterval(t);
+            $(this).stop().fadeIn();
+        }, function() {
+            $(this).stop().fadeOut();
+        });
     })
 </script>
 </html>
