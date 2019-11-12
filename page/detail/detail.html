@@ -123,6 +123,7 @@
             z-index: 99;
             position: relative;
             margin-bottom: 5px;
+            background: #1E9FFF;
         }
         .audit-list-hover-content{
             padding: 20px;
@@ -507,17 +508,17 @@
         var that = ''
         $('.audit-information .audit-list>i').hover(function() {
             that = this
-            $(that).find(".audit-list-hover").stop().fadeIn();
+            $(that).find(".audit-list-hover").stop().show();
         }, function() {
             t=setTimeout(function(){
-                $(that).find(".audit-list-hover").stop().fadeOut();
-            },100);
+                $(that).find(".audit-list-hover").stop().hide();
+            },50);
         });
         $(".audit-list-hover").hover(function() {
             window.clearInterval(t);
-            $(this).stop().fadeIn();
+            $(this).stop().show();
         }, function() {
-            $(this).stop().fadeOut();
+            $(this).stop().hide();
         });
     })
 </script>
