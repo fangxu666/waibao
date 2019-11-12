@@ -266,11 +266,11 @@
 <script src="../../js/common.js" type="text/javascript" charset="utf-8"></script>
 <script src="../../js/jquery-1.4.4.min.js" type="text/javascript"></script>
 <script type="text/html" id="barDemo">
-    <a class="table-cz-btn" lay-event="select">
-        <img src="../images/info-hover.png" alt="" title="详情" />
+    <a class="table-cz-btn" lay-event="select" onclick="toDetail()">
+        <img src="../../images/info-hover.png" alt="" title="详情" />
     </a>
     <a class="table-cz-btn" lay-event="select">
-        <img src="../images/yulan-hover.png" alt="" title="预览" />
+        <img src="../../images/yulan-hover.png" alt="" title="预览" />
     </a>
 </script>
 <script>
@@ -359,6 +359,9 @@
     });
     function toFisrt(){
         com.checkOpenMore("初审","./page/auditProcess/firstTria.html",['80%', '80%'],"tableId");
+    }
+    function toDetail(){
+        com.openMore("详情","./page/detail/detail.html",['80%', '80%'],"tableId");
     }
     //页面高度适配
     function getHeight() {

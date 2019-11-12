@@ -1,15 +1,15 @@
 /*
 * @Author: zz
-* @Date:   2019-04-16 
-* 
+* @Date:   2019-04-16
+*
 */
 layui.use(['jquery','table', 'layer'], function(){
-	var $ = layui.jquery 
+	var $ = layui.jquery
 	,table = layui.table
 	,layer = layui.layer;
 
 	/*表单的自定义验证
-	 
+
 	 * 方式：
 	 * 1、数组的形式：
 	 * 2、函数形式
@@ -22,7 +22,7 @@ layui.use(['jquery','table', 'layer'], function(){
   		    ,'密码必须6到12位，且不能出现空格'
   		]
   		//2.函数形式：value：表单的值、item：表单的DOM对象
-  		,username: function(value, item){ 
+  		,username: function(value, item){
   			//console.log(item);
 		    if(!new RegExp("^[a-zA-Z0-9_\u4e00-\u9fa5\\s·]+$").test(value)){
 		      return '用户名不能有特殊字符';
@@ -30,7 +30,7 @@ layui.use(['jquery','table', 'layer'], function(){
 		      return '用户名首尾不能出现下划线\'_\'';
 		    }else if(/^\d+\d+\d$/.test(value)){
 		      return '用户名不能全为数字';
-		    } 
+		    }
 		}
 	});
 	//table模块  点击table的某一行行选中其复选框
@@ -90,10 +90,10 @@ layui.use(['jquery','table', 'layer'], function(){
 	        }
 	    }
 	});
-	
+
 	//点击图片放大
-	
-	$(".zoomImg").click(function(){	
+
+	$(".zoomImg").click(function(){
 		var imgsrc = $(this).children('img').attr('src');
  		imgsrc = 'images/'+imgsrc.split("images/")[1];
 		console.log(imgsrc);
@@ -108,7 +108,7 @@ layui.use(['jquery','table', 'layer'], function(){
 		});
 	})
 	/*数据表格，点击选中某一行，背景色加深：区分表头和表身，只有表身的行背景色才加深*/
-	/*$("body").on("mousedown",".layui-form-checkbox",function(e){ 
+	/*$("body").on("mousedown",".layui-form-checkbox",function(e){
 		 var event = e || window.event;
 	    if(event.button == 2){//鼠标右击不勾选
 	        console.log('right');
@@ -122,24 +122,24 @@ layui.use(['jquery','table', 'layer'], function(){
 				}
 			}else{//theader，2.选中表格内的某个checkbook
 				if(!$(this).hasClass("layui-unselect layui-form-checkbox layui-form-checked")){
-					$(this).parents(".layui-table-header").next().find("tr").addClass("tablebluebg");				
+					$(this).parents(".layui-table-header").next().find("tr").addClass("tablebluebg");
 				}else{
 					$(this).parents(".layui-table-header").next().find("tr").removeClass("tablebluebg");
 				}
 			}
 	    }
 	});*/
-	
+
 	/*-----------数据表格顶部按钮过多时，更多操作按钮js-start-----*/
 	$(".layui-btn-group").on("click","#moreBtn",function(){
 		var g= $(".layui-btn-group").width();//获取按钮组长度
 	  	//var l= $(this).offset().left;//按钮距离左侧距离
 	  	var w = $("#uls").width();//下拉宽度
-	  	
+
 	  	console.log(' g==='+g+' ; w==='+w);
 	  	$("#uls").css({"top":"50px","left":g-w*0.5-23+"px"})
-	  
-	  	$("#uls").slideToggle(200);	
+
+	  	$("#uls").slideToggle(200);
 
 	  	//event.stopPropagation();
 	  	return false;//阻止冒泡
@@ -155,8 +155,8 @@ layui.use(['jquery','table', 'layer'], function(){
 	  		$("#uls").slideUp(200);
 	  	}
 	});
-	
-    /*-----------更多操作-end-----*/ 
+
+    /*-----------更多操作-end-----*/
 	/*-----------数据表格顶部搜索条件过多时，高级查询js-start-----*/
 	$("#superBtn").click(function(){
 		$("#formHtml").css({"top":"55px","right":0})
@@ -167,7 +167,7 @@ layui.use(['jquery','table', 'layer'], function(){
 	  $("#formHtml").slideUp(200);
 	})
   	/*-----------高级查询-end-----*/
-  	
+
 	/*屏幕滚动时，更多、高级查询的下拉位置随着滚动条实时滚动..*/
 	$(document).ready(function (){
 		var nScrollTop = 0; //滚动到的当前位置
@@ -182,17 +182,17 @@ layui.use(['jquery','table', 'layer'], function(){
 				$("#uls").css({"top":-nScrollTop+54});
 				$("#formHtml").css({"top":-nScrollTop+54})
 			}
-			
+
 		})
     })
-	
-	
+
+
     /*-------------公共方法-start-----------------
-     
+
      * 调用方法：com.方法名("参数1","参数2","更多参数...");
-     * 
+     *
      * */
-	
+
 	com = {
 		//-------------------表格数据渲染------------------
 		/*
@@ -222,9 +222,9 @@ layui.use(['jquery','table', 'layer'], function(){
 			  ,done:done
 			  ,hide:false
 			  //,…… //更多参数参考layui官网数据表格部分：基本参数选项
-			  
+
 			});
-			
+
 			//给表格设置title----表头名称
 			//鼠标移入表格头部显示对应的表头名称
 			if($(".layui-table-header th")&&$(".layui-table-header th").length>0){
@@ -235,7 +235,7 @@ layui.use(['jquery','table', 'layer'], function(){
 					$(".layui-table-header th").eq(i).attr('title',tt).css("cursor","pointer");//给表头加上title和鼠标手势
 				}
 			}
-			
+
 		}
 	    //-----------表格重载reloadTable--------------
 	    /*where---额外参数
@@ -263,7 +263,7 @@ layui.use(['jquery','table', 'layer'], function(){
 		,reloadPage:function(){
 			window.location.reload();
 		}
-		
+
 	    //---------打开普通弹框页面(非本页面！调用该方法成功后，会跳转到新的地址)--直接打开，弹框无需携带参数--------------------
 	    /*
 		 例如  新增
@@ -276,12 +276,12 @@ layui.use(['jquery','table', 'layer'], function(){
 		   		title:title ,//标题
 		   		resize:false,//禁止拉伸
 			    type: 2,//风格
-			    content: content,//url	
+			    content: content,//url
 			    area: area,//弹窗大小
 			});
 			parent.index_  = index;//传给子页面的值index
 		}
-		
+
 		//-----------打开筛选数据弹框页面(非本页面！调用该方法成功后，会跳转到新的地址),即弹框需要携带参数,------------
 		/*
 		 例如编辑
@@ -290,7 +290,7 @@ layui.use(['jquery','table', 'layer'], function(){
 		* content---跳转页面的url地址
 		* tableId-----table的id（不是css的id）
 		* * */
-		
+
 		,checkOpen:function(title,content,area,tableId){
 			if(tableId==undefined||""){
 				tableId = "tableId";
@@ -316,12 +316,12 @@ layui.use(['jquery','table', 'layer'], function(){
 		   		resize:false,//禁止拉伸
 				type: 2,
 				area: area,
-				content: content,	  
+				content: content,
 			});
 			parent.index_  = index;//传给子页面的值index
 			parent.id_ = checkStatus.data[0].id;//传给子页面的数据id！！！！
 		}
-		
+
 		//-----------打开筛选数据弹框页面(可以勾选多条数据，非本页面！调用该方法成功后，会跳转到新的地址),即弹框需要携带参数,------------
 		/*
 		 例如编辑
@@ -330,7 +330,7 @@ layui.use(['jquery','table', 'layer'], function(){
 		* content---跳转页面的url地址
 		* tableId-----table的id（不是css的id）
 		* * */
-		
+
 		,checkOpenMore:function(title,content,area,tableId){
 			if(tableId==undefined||""){
 				tableId = "tableId";
@@ -343,21 +343,37 @@ layui.use(['jquery','table', 'layer'], function(){
 		            , content: '请勾选一条目标数据！'
 		        });
 		        return false;
-		    } 
+		    }
 		  	console.log(checkStatus.data);
 		   	var index = top.layer.open({ //在父窗口打开
 		   		title:title ,
 		   		resize:false,//禁止拉伸
 				type: 2,
 				area: area,
-				content: content,	  
+				content: content,
 			});
 			parent.index_  = index;//传给子页面的值index
 			parent.id_ = checkStatus.data[0].id;//传给子页面的数据id！！！！
 		}
+        ,openMore:function(title,content,area,tableId){
+            if(tableId==undefined||""){
+                tableId = "tableId";
+            }
+            var checkStatus = table.checkStatus(tableId); //test即为基础参数id对应的值
+            //数据只能是一条
+            var index = top.layer.open({ //在父窗口打开
+                title:title ,
+                resize:false,//禁止拉伸
+                type: 2,
+                area: area,
+                content: content,
+            });
+            parent.index_  = index;//传给子页面的值index
+            parent.id_ = checkStatus.data[0].id;//传给子页面的数据id！！！！
+        }
 		//-----------打开确认弹框页面，单选(本页面！！！)---------
 		/*
-		
+
 		* 参数：
 		* msg---确认弹出层的内容（）
 		* title---页面的标题
@@ -390,16 +406,16 @@ layui.use(['jquery','table', 'layer'], function(){
 	    	for (var i in data){
               idArray.push(data[i].id);
 	        }
-	        
+
 			parent.layer.confirm(msg, {
 			  title:title,
-			  btn: btn,//按钮			
+			  btn: btn,//按钮
 			},fn);
 		}
-		
+
 		//-----------打开确认弹框页面，多选(本页面！！！)---------
 		/*
-		
+
 		* 参数：
 		* msg---确认弹出层的内容（）
 		* title---页面的标题
@@ -413,7 +429,7 @@ layui.use(['jquery','table', 'layer'], function(){
 				tableId = "tableId";
 			}
 			var checkStatus = table.checkStatus(tableId); //test即为基础参数id对应的值
-			
+
 		    //数据至少是一条
 		    if (checkStatus.data.length == 0) {
 		        parent.layer.open({
@@ -428,17 +444,17 @@ layui.use(['jquery','table', 'layer'], function(){
 	    	for (var i in data){
               idArray.push(data[i].id);
 	        }
-	        
+
 			parent.layer.confirm(msg, {
 			  title:title,
-			  btn: btn,//按钮			
+			  btn: btn,//按钮
 			},fn);
 		}
 		//---------提示框------------
 		/*msg----提示的信息
 		 * icon---提示的图标：1：对号；2：叉号；3：问号；4：锁住符号；5：不开心表情；6：开心笑脸表情；7：感叹号；
 		 * 建议使用 5 作为失败提示、6 作为成功提示、7 作为警告或者温馨提示。
-		 * 
+		 *
 		 */
 		,msg:function(msg,icon){
 			layer.msg(msg, {icon: icon, anim: 6,time:1500});
@@ -446,12 +462,12 @@ layui.use(['jquery','table', 'layer'], function(){
 		/*,msg:function(msg){
 			layer.msg(msg, { anim: 6,time:1500});
 		}*/
-		
+
 		//-----------正在加载--loading控件---------------
 		/*
 		 * loadingShow();--开启loading
 		 * loadingClose();--关闭loading
-		 * 
+		 *
 		 * */
 		,loadingShow:function(){
 			parent.layer.load(1,{
@@ -461,19 +477,18 @@ layui.use(['jquery','table', 'layer'], function(){
 		,loadingClose:function(){
 			parent.layer.closeAll('loading');
 		}
-	
-        
+
 	}//com
-	
-	 
+
+
 })
 
 
 
 
-	
-	
-	
+
+
+
 
 
 
