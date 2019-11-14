@@ -136,14 +136,7 @@
                             <div class="layui-form-item">
                                 <label class="layui-form-label">初审人</label>
                                 <div class="layui-input-block">
-                                    <select name="interest" lay-filter="agent">
-                                        <option value=""></option>
-                                        <option value="0">初审人1</option>
-                                        <option value="1" selected="">初审人2</option>
-                                        <option value="2">初审人3</option>
-                                        <option value="3">初审人4</option>
-                                        <option value="4">初审人5</option>
-                                    </select>
+                                    <input type="text" name="title" autocomplete="off" placeholder="请输入初审人" class="layui-input">
                                 </div>
                             </div>
                         </div>
@@ -151,14 +144,7 @@
                             <div class="layui-form-item">
                                 <label class="layui-form-label">复审人</label>
                                 <div class="layui-input-block">
-                                    <select name="interest" lay-filter="agent">
-                                        <option value=""></option>
-                                        <option value="0">复审人1</option>
-                                        <option value="1" selected="">复审人2</option>
-                                        <option value="2">复审人3</option>
-                                        <option value="3">复审人4</option>
-                                        <option value="4">复审人5</option>
-                                    </select>
+                                    <input type="text" name="title" autocomplete="off" placeholder="请输入复审人" class="layui-input">
                                 </div>
                             </div>
                         </div>
@@ -166,14 +152,7 @@
                             <div class="layui-form-item">
                                 <label class="layui-form-label">终审人</label>
                                 <div class="layui-input-block">
-                                    <select name="interest" lay-filter="agent">
-                                        <option value=""></option>
-                                        <option value="0">终审人1</option>
-                                        <option value="1" selected="">终审人2</option>
-                                        <option value="2">终审人3</option>
-                                        <option value="3">终审人4</option>
-                                        <option value="4">终审人5</option>
-                                    </select>
+                                    <input type="text" name="title" autocomplete="off" placeholder="请输入终审人" class="layui-input">
                                 </div>
                             </div>
                         </div>
@@ -284,6 +263,7 @@
         //日期选择
         laydate.render({
             elem: '#date1'
+            ,range:true
         });
         //表格参数
         var arr = [[
