@@ -307,20 +307,21 @@
         getHeight()
 
         //复选方法监听    自定义数组
-        var ids = null;
-        var flag = true
+        var ids = 0;
+        // var flag = true
         table.on('checkbox(tableBox)', function(obj){
-            if (flag){
-                ids = $(".layui-laypage-limits").find("option:selected").val()
-                flag = false
-            }
+            // if (flag){
+            //     ids = $(".layui-laypage-limits").find("option:selected").val()
+            //     flag = false
+            // }
             if(obj.checked==true){
                 if(obj.type=='all'){
                     console.log(ids)
                     ids = $(".layui-laypage-limits").find("option:selected").val()
                     $("#zh-btn").text("批量转换")
                 }else{
-                    if (ids <= 0){
+                    console.log(ids)
+                    if (ids < 1){
                         $("#zh-btn").text("转换")
                     } else{
                         $("#zh-btn").text("批量转换")
