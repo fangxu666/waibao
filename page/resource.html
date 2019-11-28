@@ -316,6 +316,7 @@
             }
             if(obj.checked==true){
                 if(obj.type=='all'){
+                    console.log(ids)
                     ids = $(".layui-laypage-limits").find("option:selected").val()
                     $("#zh-btn").text("批量转换")
                 }else{
@@ -328,11 +329,12 @@
                 }
             }else{
                 if(obj.type=='all'){
+                    console.log(ids)
                     ids = 0
                     $("#zh-btn").text("转换")
                 }else{
-                    ids--
                     console.log(ids)
+                    ids--
                     if (ids >= 2){
                         $("#zh-btn").text("批量转换")
                     } else {

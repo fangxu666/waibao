@@ -303,7 +303,7 @@
         ]];
         var limitArr =[10,20,30];
         var urls = '../../tableJson.js';
-        com.tableRender('#layui-table','tableId','full-53',limitArr,urls,arr);//加载表格,注意tableId是自定义的，在表格重载需要！！
+        com.tableRender('#layui-table','layui-table','full-53',limitArr,urls,arr);//加载表格,注意tableId是自定义的，在表格重载需要！！
         getHeight()
         //复选方法监听    自定义数组
         var ids = null;
@@ -331,6 +331,7 @@
                     $("#by-btn").text("标引")
                 }else{
                     ids--
+                    console.log(ids)
                     if (ids >= 2){
                         $("#by-btn").text("批量标引")
                     } else {
@@ -340,6 +341,10 @@
                 }
             }
         });
+        //标引、批量标引
+        $("body").on("click",'#by-btn',function () {
+            com.checkOpenMore("标引","./page/indexing/indexing.html",['80%', '80%'],"layui-table");
+        })
         //伸缩箭头
         $("body").on("click",'.iconarrow-double-up-class',function () {
             $(".form-hide").hide()
@@ -358,10 +363,10 @@
         })
     });
     function toFisrt(){
-        com.checkOpenMore("初审","./page/auditProcess/firstTria.html",['80%', '80%'],"tableId");
+        com.checkOpenMore("初审","./page/auditProcess/firstTria.html",['80%', '80%'],"layui-table");
     }
     function toDetail(){
-        com.openMore("详情","./page/detail/detail.html",['80%', '80%'],"tableId");
+        com.openMore("详情","./page/detail/detail.html",['80%', '80%'],"layui-table");
     }
     //页面高度适配
     function getHeight() {
